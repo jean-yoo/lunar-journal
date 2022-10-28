@@ -6,7 +6,6 @@ import requests
 def azure_sentiment_analysis(new_text):
     """ takes new user text and returns sentiment analysis Microsoft's Azure Cognitive Services
     """
-    headers = {'Ocp-Apim-Subscription-Key': '59bf3be460ad434585a4b4143c470a92'}
     document = {'documents': [{'id': '1', 'text': new_text}]}
     azure_url = "https://eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment"
 

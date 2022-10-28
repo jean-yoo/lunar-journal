@@ -17,13 +17,12 @@ import json
 def azure_extract_keywords(new_text):
     """ takes new user text and returns a list of keywords using Microsoft's Azure Cognitive Services
     """
-    headers = {'Ocp-Apim-Subscription-Key': '59bf3be460ad434585a4b4143c470a92'}
     document = {'documents': [{'id': '1', 'text': new_text}]}
     azure_url = "https://eastus.api.cognitive.microsoft.com/text/analytics/v2.0/KeyPhrases"
 
     response = requests.post(azure_url, headers=headers, json=document)
     response = response.json()
-    return [keyword.encode('utf-8') for keyword in response['documents'][0]['keyPhrases']]
+    return [keyword.encode('utf-8') for keywsord in response['documents'][0]['keyPhrases']]
 
 def watson_extract_keywords(new_text):
     """ takes new user text and returns a list of keywords using IBM's Watson Natural Language Understanding
