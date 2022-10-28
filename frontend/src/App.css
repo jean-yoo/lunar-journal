@@ -1,0 +1,584 @@
+.App {
+  height: 1vw;
+  
+}
+
+.App-intro {
+  text-align: center;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	background-color: rgb(240, 240, 240);
+}
+
+
+#banner {
+    border-bottom: 0px !important;
+    padding-left: 2%;
+    padding-top: 2%;
+    /* animation: fade-in 3.5s; */
+}
+
+.intro-journal {
+    opacity: 1;
+    margin-top: 20%;
+    z-index: 1;
+    text-align: center;
+    animation: shift-up 3s forwards;
+    animation-delay: 3s;
+
+    color: #3c3c3c;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4.5px;
+}
+
+.journal-editor {
+    color: #3c3c3c;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(118, 143, 255, 0.1) 0px 8px 10px 0px;
+    padding: 40px;
+    margin: 65px auto 45px;
+    border-radius: 4.5px;
+}
+
+.day-segment{
+    border: 2px !important;
+    width: 70% !important;
+    padding-top: 2% !important;
+    padding-bottom: 10% !important;
+    margin-top: 5% !important;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+}
+
+.block-loading {
+   margin-top: 10% !important;
+}
+
+.dashboard {
+  box-shadow: rgba(118, 150, 255, 0.1) 0px 2px 7px 0px;
+  border: none;
+}
+
+.imageCard {
+  float: left;
+}
+
+.imagePrompt {
+  display: inline-block;
+  margin-top: 3%;
+  color: #9c9c9c;
+  font-size: 20px;
+}
+
+.weather {
+  float: left;
+  width: 30px;
+  height: 30px;
+}
+
+.timestamp {
+  float: left;
+}
+.caption {
+  font-size: 20px;
+  text-align: center;
+  margin-right: 12%;
+  margin-bottom: 3%;
+}
+
+.particles {
+    z-index: -1 !important;
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.suggestions-box {
+    animation: fade-expand-in  1s;
+    position: fixed !important;
+    display: inline-block;
+    border: 2px !important;
+    z-index: 1;
+    padding-bottom: 40% !important;
+    top: 20% !important; 
+    right: 2.5% !important;
+    width: 20% !important;
+    bottom: 50% !important;
+    padding-top: 5% !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 1em 0 0 2em;
+    margin: 0;
+    list-style: none;
+    /* position: abso; */
+    left: 25%;
+}
+
+ul li {
+    position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
+    /* use padding-bottom instead of margin-bottom.*/ 
+    margin-bottom: 0; /* This overrides previously specified margin-bottom */
+    padding-bottom: 2.5em;
+}
+
+ul li:before {
+    content:"";
+    position: absolute;
+    left: 49.5%;
+    top: 20%;
+    border-left: 4px dotted rgb(157, 224, 245);
+    height: 100%;
+    width: 1px;
+}
+
+.promptCard {
+    border: 5px !important;
+    animation: fly-in 0.5s forwards;
+    opacity: 0;
+}
+
+#logo {
+    animation: fade-in 1s forwards;
+    animation-delay: 5.5s;
+    margin: auto;
+    margin-bottom: 2.5%;
+    height: 13rem;    /* display: inline-block; */
+    opacity: 0;
+}
+
+#button1 {
+    animation: fade-expand-in  6s;
+    top: 60%;
+    margin: auto !important;
+    opacity: 1;
+}
+
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+    }
+}
+
+
+@keyframes shift-up {
+    100% {
+        margin-top: 5%;
+        margin-bottom: 2.5%;
+    }
+}
+
+@keyframes fly-in {
+    0% {
+        margin-top: 35%;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-expand-in {
+    0% {
+        opacity: 0;
+        transform: scaleX(0.01)
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+
+@keyframes logo-fly{
+  20% {
+    top: 0rem;
+    opacity: 1;
+    /* transform: rotateY(200deg); */
+  }
+  30% {
+
+    /* transform: rotateY(300deg) scaleX(1.0); */
+  }
+  40% {
+    top: -10rem
+    /* transform: rotateY(360deg) scaleX(0.125); */
+  }
+  50% {
+    /* transform: scaleX(1.0); */
+  }
+  60% {
+    /* transform: scaleX(0.125); */
+  }
+  70% {
+    transform: scale(0.50);
+  }
+  80% {
+    top: -40rem;
+    opacity: 0;
+  }
+}
+
+/* Butterfly Animation Inspired by https://codepen.io/htgmanics/pen/nJwdl */
+@keyframes rotating {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    -moz-transform: rotate3d(0, 0, 0, 0deg);
+    -ms-transform: rotate3d(0, 0, 0, 0deg);
+    -o-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 1, 0, 720deg);
+    -moz-transform: rotate3d(0, 1, 0, 720deg);
+    -ms-transform: rotate3d(0, 1, 0, 720deg);
+    -o-transform: rotate3d(0, 1, 0, 720deg);
+    transform: rotate3d(0, 1, 0, 720deg);
+  }
+}
+@keyframes rotatingY {
+  100% {
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+@keyframes fluttering {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%,
+  60% {
+    -webkit-transform: translate3d(0, 150px, 0);
+    -moz-transform: translate3d(0, 150px, 0);
+    -ms-transform: translate3d(0, 150px, 0);
+    -o-transform: translate3d(0, 150px, 0);
+    transform: translate3d(0, 150px, 0);
+  }
+  30%,
+  80% {
+    -webkit-transform: translate3d(0, 50px, 0);
+    -moz-transform: translate3d(0, 50px, 0);
+    -ms-transform: translate3d(0, 50px, 0);
+    -o-transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 50px, 0);
+  }
+}
+@keyframes left-wing-flap {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+    -moz-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+    -ms-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+    -o-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+    transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, -70deg);
+    -moz-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, -70deg);
+    -ms-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, -70deg);
+    -o-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, -70deg);
+    transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, -70deg);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+    -moz-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+    -ms-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+    -o-transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+    transform: translate3d(0, 0, 0) scaleX(1) rotate3d(0, 1, 0, 60deg);
+  }
+}
+@keyframes right-wing-flap {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+    -moz-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+    -ms-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+    -o-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+    transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, -70deg);
+    -moz-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, -70deg);
+    -ms-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, -70deg);
+    -o-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, -70deg);
+    transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, -70deg);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+    -moz-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+    -ms-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+    -o-transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+    transform: translate3d(0, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 60deg);
+  }
+}
+
+.home_butterfly {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  animation: logo-fly 4s;
+  animation-delay: 2.5s;
+  opacity: 0;
+}
+
+.home_butterfly var {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  width: 10rem;
+  height: 10rem;
+  margin-left: -50px;
+  margin-top: -50px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.home_butterfly var.rotate3d {
+  -webkit-transform: rotate3d(1, 0.5, 0, 50deg);
+  -moz-transform: rotate3d(1, 0.5, 0, 50deg);
+  -ms-transform: rotate3d(1, 0.5, 0, 50deg);
+  -o-transform: rotate3d(1, 0.5, 0, 50deg);
+  transform: rotate3d(1, 0.5, 0, 50deg);
+}
+.home_butterfly var.translate3d {
+  -webkit-animation: fluttering 10s ease-in-out infinite;
+  -moz-animation: fluttering 10s ease-in-out infinite;
+  -ms-animation: fluttering 10s ease-in-out infinite;
+  -o-animation: fluttering 10s ease-in-out infinite;
+  animation: fluttering 10s ease-in-out infinite;
+}
+.home_butterfly figure.butterfly {
+  position: absolute;
+  /* top: 50%; */
+  width: 20rem;
+  height: 20rem;
+  margin-left: -50px;
+  margin-top: -50px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.home_butterfly figure.butterfly .wing {
+  position: absolute;
+  width: 6rem;
+  height: 12rem;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+  -moz-transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+  -ms-transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+  -o-transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+  transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+}
+.home_butterfly figure.butterfly .wing.right {
+  -webkit-transform-origin: 6rem 6rem;
+  -moz-transform-origin: 6rem 6rem;
+  -ms-transform-origin: 6rem 6rem;
+  -o-transform-origin: 6rem 6rem;
+  transform-origin: 6rem 6rem;
+  -webkit-transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  -moz-transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  -ms-transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  -o-transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  -webkit-animation: right-wing-flap 1.25s ease-in-out infinite;
+  -moz-animation: right-wing-flap 1.25s ease-in-out infinite;
+  -ms-animation: right-wing-flap 1.25s ease-in-out infinite;
+  -o-animation: right-wing-flap 1.25s ease-in-out infinite;
+  animation: right-wing-flap 1.25s ease-in-out infinite;
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.home_butterfly figure.butterfly .wing.left {
+  -webkit-transform-origin: 6rem 6rem;
+  -moz-transform-origin: 6rem 6rem;
+  -ms-transform-origin: 6rem 6rem;
+  -o-transform-origin: 6rem 6rem;
+  transform-origin: 6rem 6rem;
+  -webkit-animation: left-wing-flap 1.25s ease-in-out infinite;
+  -moz-animation: left-wing-flap 1.25s ease-in-out infinite;
+  -ms-animation: left-wing-flap 1.25s ease-in-out infinite;
+  -o-animation: left-wing-flap 1.25s ease-in-out infinite;
+  animation: left-wing-flap 1.25s ease-in-out infinite;
+}
+
+.butterfly_container {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  animation: fade-in 2s forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.butterfly_container var {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  width: 10rem;
+  height: 10rem;
+  margin-left: -40px;
+  margin-top: -25px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.butterfly_container var.rotate3d {
+  -webkit-transform: rotate3d(1, 0.5, 0, 50deg);
+  -moz-transform: rotate3d(1, 0.5, 0, 50deg);
+  -ms-transform: rotate3d(1, 0.5, 0, 50deg);
+  -o-transform: rotate3d(1, 0.5, 0, 50deg);
+  transform: rotate3d(1, 0.5, 0, 50deg);
+}
+.butterfly_container var.translate3d {
+  -webkit-animation: fluttering 10s ease-in-out infinite;
+  -moz-animation: fluttering 10s ease-in-out infinite;
+  -ms-animation: fluttering 10s ease-in-out infinite;
+  -o-animation: fluttering 10s ease-in-out infinite;
+  animation: fluttering 10s ease-in-out infinite;
+}
+.butterfly_container figure.butterfly {
+  position: absolute;
+  /* top: 50%; */
+  width: 20rem;
+  height: 20rem;
+  margin-left: 0px;
+  margin-top: -25px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.butterfly_container figure.butterfly .wing {
+  position: absolute;
+  width: 6rem;
+  height: 12rem;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+  -moz-transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+  -ms-transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+  -o-transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+  transform: translate3d(0, 0, 0) rotate3d(1, 0.5, 0, 45deg);
+}
+.butterfly_container figure.butterfly .wing.right {
+        width: 3rem;
+    height: 6rem;
+  -webkit-transform-origin: 3rem 3rem;
+  -moz-transform-origin: 3rem 3rem;
+  -ms-transform-origin: 3rem 3rem;
+  -o-transform-origin: 3rem 3rem;
+  transform-origin: 3rem 3rem;
+  -webkit-transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  -moz-transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  -ms-transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  -o-transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  transform: translate3d(0px, 0, 0) scaleX(-1) rotate3d(0, 1, 0, 45deg);
+  -webkit-animation: right-wing-flap 1.0s ease-in-out infinite;
+  -moz-animation: right-wing-flap 1.0s ease-in-out infinite;
+  -ms-animation: right-wing-flap 1.0s ease-in-out infinite;
+  -o-animation: right-wing-flap 1.0s ease-in-out infinite;
+  animation: right-wing-flap 1.0s ease-in-out infinite;
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.butterfly_container figure.butterfly .wing.left {
+    width: 3rem;
+    height: 6rem;
+  -webkit-transform-origin: 3rem 3rem;
+  -moz-transform-origin: 3rem 3rem;
+  -ms-transform-origin: 3rem 3rem;
+  -o-transform-origin: 3rem 3rem;
+  transform-origin: 3rem 3rem;
+  -webkit-animation: left-wing-flap 1.0s ease-in-out infinite;
+  -moz-animation: left-wing-flap 1.0s ease-in-out infinite;
+  -ms-animation: left-wing-flap 1.0s ease-in-out infinite;
+  -o-animation: left-wing-flap 1.0s ease-in-out infinite;
+  animation: left-wing-flap 1.0s ease-in-out infinite;
+}
+.butterfly_container figure.butterfly .wing use {
+  display: block;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  fill: url(#image);
+}
+
+
+
+.svg-defs {
+  position: absolute;
+  height: 0;
+  width: 0;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "personal_web_app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "history": "^4.7.2",
+    "immutable": "^3.8.2",
+    "lodash": "^4.17.11",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-map-gl": "^3.3.4",
+    "react-motion": "^0.5.2",
+    "react-particles-js": "^2.3.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-hash-link": "^1.2.0",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.1.4",
+    "react-vis": "^1.11.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.3.3",
+    "semantic-ui-react": "^0.82.2",
+    "slate": "^0.40.2",
+    "slate-react": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:5000/"
+}

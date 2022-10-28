@@ -1,0 +1,10 @@
+node_modules/
+fromFrontEnd/
+
+*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+yarn.lock
